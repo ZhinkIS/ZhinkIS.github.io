@@ -1,0 +1,102 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #0f0f0f, #1c1c1c);
+  min-height: 100vh;
+  color: white;
+  position: relative; /* supaya posisi fixed tombol relatif terhadap body */
+}
+
+.calculator {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(15px);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.8);
+  padding: 20px;
+  width: 320px;
+  max-width: 90vw;
+  z-index: 1;
+}
+
+.display input {
+  width: 100%;
+  font-size: 2em;
+  padding: 15px;
+  border: none;
+  border-radius: 10px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  text-align: right;
+  margin-bottom: 15px;
+  outline: none;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+button {
+  padding: 20px;
+  font-size: 1.2em;
+  border: none;
+  border-radius: 12px;
+  background: rgba(255,255,255,0.1);
+  color: white;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  text-align: left;
+}
+
+button:hover {
+  background: rgba(255,255,255,0.2);
+  transform: scale(1.05);
+}
+
+button:active {
+  transform: scale(0.98);
+}
+
+button.clear {
+  background: #ff3b3b;
+  color: white;
+}
+
+button.equal {
+  background: #00c853;
+  color: white;
+  grid-row: span 2;
+}
+
+button.zero {
+  grid-column: span 2;
+}
+
+/* Tombol play lagu di pojok kiri bawah fixed */
+#playButton {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  padding: 10px 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #0ea5a4;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+  transition: background-color 0.3s ease;
+  z-index: 10;
+}
+
+#playButton:hover {
+  background-color: #14b8a6;
+}
